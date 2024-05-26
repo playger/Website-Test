@@ -1,0 +1,17 @@
+//-------------General-------------//
+@import "./variables/global.scss";
+@import "./reset.scss";
+//-------------General-------------//
+//-------------Themes--------------//
+@import "./themes/dark.scss";
+@import "./themes/normal.scss";
+//-------------Themes--------------//
+
+.app {
+  background-color: violet;
+  font: var(--font-l);
+
+  background: var(--bg-color);
+  color: var(--primary-color);
+  min-height: 100vh;
+}
