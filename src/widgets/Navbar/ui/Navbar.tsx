@@ -1,18 +1,26 @@
 import { Link } from "react-router-dom";
 import { classNames } from "shared/lib/className/classNames";
 import cls from "./Navbat.module.scss";
-import { log } from "console";
+import { AppLink, AppLinkTheme } from "shared/ui/AppLink/Applink";
 interface NavbarProps {
   className?: string;
 }
 
 export const Navbar = ({ className }: NavbarProps) => {
   return (
-    <div className={classNames(cls.navbar, {}, [className])}>
-      <Link to={"/"}>Главаня Страница</Link>
-      <Link to={"/about"}>О сайте</Link>
+    <div className={classNames(cls.Navbar, {}, [className])}>
+      <div className={cls.links}>
+        <AppLink
+          theme={AppLinkTheme.INVENTED}
+          to={"/"}
+          className={cls.mainLink}
+        >
+          Главаня Страница
+        </AppLink>
+        <AppLink theme={AppLinkTheme.INVENTED} to={"/about"}>
+          О сайте
+        </AppLink>
+      </div>
     </div>
   );
 };
-
-
