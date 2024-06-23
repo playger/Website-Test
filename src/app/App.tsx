@@ -15,9 +15,9 @@ const App = () => {
         "cls3",
       ])}
     >
-      <button onClick={toggleTheme}>TOGGLE</button>
       <Navbar />
       <AppRouter />
+      <button onClick={toggleTheme}>TOGGLE</button>
     </div>
   );
 };
