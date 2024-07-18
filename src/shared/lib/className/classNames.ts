@@ -1,6 +1,5 @@
 type Mods = Record<string, boolean | string>;
 
-let mods = { fhflkj: true, cfgft: true, drtyjhr: false };
 export function classNames(
   cls: string,
   mods: Mods = {},
