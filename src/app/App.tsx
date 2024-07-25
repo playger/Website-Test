@@ -1,10 +1,13 @@
 import "./styles/index.scss";
-import { Link } from "react-router-dom";
 import { classNames } from "shared/lib/className/classNames";
 import { useTheme } from "./providers/themeProvider";
 import { AppRouter } from "./providers/router";
 import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
+import { Suspense } from "react";
+
+
+
 const App = () => {
   const { theme } = useTheme();
   const bool = true;
@@ -17,10 +20,13 @@ const App = () => {
       ])}
     >
       <Navbar />
-      <div className="content-page">
-        <Sidebar></Sidebar>
-        <AppRouter />
-      </div>
+      <Suspense fallback={""}>
+      
+        <div className="content-page">
+          <Sidebar></Sidebar>
+          <AppRouter />
+        </div>
+      </Suspense>
     </div>
   );
 };
