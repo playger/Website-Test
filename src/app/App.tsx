@@ -6,29 +6,25 @@ import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
 import { Suspense } from "react";
 
-
-
 const App = () => {
-  const { theme } = useTheme();
-  const bool = true;
-  return (
-    <div
-      className={classNames("app", { hovered: true, Selected: true }, [
-        theme,
-        "cls2",
-        "cls3",
-      ])}
-    >
-      <Navbar />
-      <Suspense fallback={""}>
-      
-        <div className="content-page">
-          <Sidebar></Sidebar>
-          <AppRouter />
+    const { theme } = useTheme();
+    return (
+        <div
+            className={classNames("app", { hovered: true, Selected: true }, [
+                theme,
+                "cls2",
+                "cls3",
+            ])}
+        >
+            <Navbar />
+            <Suspense fallback={""}>
+                <div className="content-page">
+                    <Sidebar></Sidebar>
+                    <AppRouter />
+                </div>
+            </Suspense>
         </div>
-      </Suspense>
-    </div>
-  );
+    );
 };
 
 export default App;

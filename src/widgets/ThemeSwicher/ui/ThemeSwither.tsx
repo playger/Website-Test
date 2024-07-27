@@ -10,19 +10,19 @@ interface ThemeSwitherProps {
 }
 
 export const ThemeSwither = ({ className }: ThemeSwitherProps) => {
-  const { theme, toggleTheme } = useTheme();
+    const { theme, toggleTheme } = useTheme();
 
-  return (
-    <Button
-      theme={ThemeButton.CLEAR}
-      className={classNames(cls.ThemeSwither, {}, [className, cls.switherSize])}
-      onClick={toggleTheme}
-    >
-      {theme === Theme.DARK ? (
-        <ThemeDarkIcon className={cls.scaleIcon} />
-      ) : (
-        <ThemeLightIcon className={cls.scaleIcon} />
-      )}
-    </Button>
-  );
+    return (
+        <Button
+            theme={ThemeButton.CLEAR}
+            className={classNames(cls.ThemeSwither, {}, [className, cls.switherSize])}
+            onClick={toggleTheme}
+        >
+            {theme === Theme.DARK ? (
+                <ThemeDarkIcon className={cls.scaleIcon} />
+            ) : (
+                <ThemeLightIcon className={cls.scaleIcon} />
+            )}
+        </Button>
+    );
 };
