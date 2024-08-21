@@ -23,7 +23,8 @@ const config: Config.InitialOptions = {
     ],
     rootDir: "../../",
     testMatch: [
-        'src/**/*(*,)@(spec|test).[tj]s?(x)'
+        "/__tests__//*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).[tj]s?(x)"
     ],
     // All imported modules in your tests should be mocked automatically
     // automock: false,
