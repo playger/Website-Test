@@ -9,10 +9,13 @@ interface PageErrorProps {
 
 export const PageError = ({ className }: PageErrorProps) => {
     const{t} = useTranslation();
+    const reloadPage = () => {
+        location.reload()
+    }
     return (
         <div className={classNames(cls.PageError, {}, [className])}>
             <p>{t("Stupid Erorr")}</p>
-            <Button>{t("Reload")}</Button>
+            <Button onClick={reloadPage}>{t("Reload")}</Button>
         </div>
     );
 };
