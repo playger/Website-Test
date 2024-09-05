@@ -2,23 +2,28 @@
   "compilerOptions": {
     "outDir": "./dist/",
     "noImplicitAny": true,
-    "module": "ES2022",
+    "module": "ESNext",
     "target": "es5",
     "jsx": "react-jsx",
-    "baseUrl": ".",
-    "paths": {
-      "*": ["./src/*"],
-    "types": ["jest"]
-    },
-    "allowJs": true,
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
+    "baseUrl": ".",
+    "allowJs": true,
+    "paths": {
+      "*": [
+        "./src/*"
+      ]
+    },
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   },
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
-  
+  },
+  "include": [
+    "./config/jest/setupTests.ts",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+  ]
 }

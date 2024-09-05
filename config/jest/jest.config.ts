@@ -4,6 +4,7 @@
  */
 
 import type { Config } from '@jest/types';
+import path from 'path';
 
 const config: Config.InitialOptions = {
     clearMocks: true,
@@ -11,6 +12,7 @@ const config: Config.InitialOptions = {
     coveragePathIgnorePatterns: [
         "/node_modules/"
     ],
+    moduleDirectories: ['node_modules', 'src'],
     moduleFileExtensions: [
         "js",
         "mjs",
@@ -26,6 +28,11 @@ const config: Config.InitialOptions = {
         "/__tests__//*.[jt]s?(x)",
         "**/?(*.)+(spec|test).[tj]s?(x)"
     ],
+    setupFilesAfterEnv: ['<rootDir>config/jest/setupTest.ts'],
+    moduleNameMapper: {
+        '\\.(scss)$': 'identity-obj-proxy',
+        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx')
+    },
     // All imported modules in your tests should be mocked automatically
     // automock: false,
 
