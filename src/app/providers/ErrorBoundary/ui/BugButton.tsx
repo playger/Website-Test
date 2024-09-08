@@ -6,6 +6,7 @@ interface BugButtonProps {
   className?: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const BugButton = ({ className }: BugButtonProps) => {
 
     const [error,setError] = useState(false);

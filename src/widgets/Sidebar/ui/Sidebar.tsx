@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ThemeSwither } from "widgets/ThemeSwicher";
 import { LangSwither } from "widgets/LangSwither/LangSwither";
 import { t } from "i18next";
+import { Button } from "shared/ui/Button/Button";
 
 interface SidebarProps {
   className?: string;
@@ -21,7 +22,11 @@ export const Sidebar = ({ className }: SidebarProps) => {
                 className,
             ])}
         >
-            <button onClick={onToggle}>{t("toggle")}</button>
+            <Button  
+                data-testid="sidebar-toogle" 
+                onClick={onToggle}>
+                {t("toggle")}
+            </Button>
             <div className={cls.switchers}>
                 <ThemeSwither />
                 <LangSwither className={cls.Lang} />
